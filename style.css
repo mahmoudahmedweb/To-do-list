@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F7F7F7;
+    padding: 10px;
+}
+
+
+.to-do {
+    width: 100%;
+    max-width: 540px;
+    margin: 60px auto 20px;
+    background-color: #FFFFFF;
+    padding: 30px 30px;
+    box-shadow: 0px 4px 32px 0px #00000014;
+}
+
+.to-do .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 3px dashed #ccc;
+    height: 25%;
+}
+
+.to-do h2 {
+    font-size: 32px;
+    font-family: 'Kalam', cursive;
+    font-weight: 300;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.to-do h2 span {
+    font-size: 10px;   
+    background-color: #E9E9E9;
+    border-radius: 32px;
+    padding: 8px;
+}
+
+.to-do i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 12.45px 12.14px 11.55px 11.86px;
+    gap: 8px;
+    opacity: 0px;
+    transition: background-color 0.3s ease, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Spring-like animation */
+}
+
+.to-do i:hover {
+    background-color: #E9E9E9;
+    cursor: pointer;
+}
+
+.to-do .content {
+    margin-top: 30px;
+    min-height: 350px;
+    border-bottom: 3px dashed #ccc;;
+}
+
+.to-do p {
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    line-height: 25.2px;
+    color: #b7bcbf;
+    display: block;
+}
+
+.to-do ul {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.to-do ul li {
+    list-style: none;
+    font-size: 14px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.to-do ul li:hover {
+    background-color: #F7F7F7;
+    
+}
+
+.to-do ul li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    border: 4px solid #DCDCDC;
+    opacity: 0px;
+}
+
+.to-do ul .checked::after {
+    content: "\2713";
+    color: #EE889A;
+    position: absolute;
+    font-size: 42px;    
+    top: -10px;
+    left: 13px;
+    display: inline-block;
+}
+
+.to-do ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 32px;
+    color: #EE889A;
+    text-align: center;
+    border-radius: 50%;
+
+}
+.to-do ul li span:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+.functions {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.functions input {
+    flex: 1;
+    margin-right: 15px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    text-align: left;
+}
+
+.functions input::placeholder {
+    font-weight: 500;
+    color: #B7BCBF;
+    font-size: 14px;
+    line-height: 25.2px;
+}
+
+.functions button {
+    border: none;
+    outline: none;
+    padding: 16px 24px;
+    background-color: #EE889A;
+    border-radius: 48px;
+    font-weight: 700;
+    color: #1E2122;
+    transition: background-color 0.2s ease-in-out, transform 0.2s cubic-bezier(0.22, 0.61, 0.36, 1); /* Approximate spring */
+    animation-duration: 0ms;
+
+}
+
+.functions .button-night {
+    color: #FFFFFF;
+}
+.functions button:hover {
+    background-color: #DE7184;
+    cursor: pointer;
+    transform: scale(1.0); /* Slight scaling to emphasize hover effect */
+}
+
+.functions button:active {
+    transform: scale(0.92); /* Slight compression on click */
+}
+
+.functions button:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.functions button:mouseleave {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dark-mode .container {
+    background-color: #25282A;
+}
+
+.dark-mode .to-do {
+    background-color: #1E2122;
+}
+
+.dark-mode .to-do i {
+    color: white;
+}
+.dark-mode .to-do i:hover {
+    background-color: #E9E9E9;
+    color: #25282A;
+}
+
+.dark-mode .heading {
+    border-bottom-color: #4B5255;
+}
+.dark-mode .to-do h2 {
+    color: white;
+}
+.dark-mode .to-do h2 span {
+    background-color: #7A8185;
+    color: white;
+}
+
+.dark-mode .to-do p {
+    color: #7A8185;
+}
+
+.dark-mode .to-do ul li {
+    color: white;
+}
+
+.dark-mode .to-do ul li:hover {
+    background-color: #444C4E;
+}
+
+.dark-mode .to-do .content {
+    margin-top: 30px;
+    height: 350px;
+    border-bottom-color: #4B5255;
+}
+.dark-mode .functions input {
+    background-color: #1E2122;
+    color: white;
+}
+
+.dark-mode .functions input::placeholder {
+    background-color: #1E2122;
+}
+
+.dark-mode .functions button {
+    color: white;
+}

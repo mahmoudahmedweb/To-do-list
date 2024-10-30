@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>To-do list App</title>
+        <link rel="stylesheet" href="style.css">
+        <!--Font Awseome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mogra&family=Tillana:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="to-do">
+                <div class="heading">
+                    <h2>My To-do list <span id="count">0 item(s)</span></h2>
+                    <i class="fa-regular fa-moon" id="night-mode"></i>
+                </div>
+                <div class="content">
+                    <p id="paragraph">Your list is empty</p> 
+                    <ul id="items-container">
+                        <!--
+                        <li class="checked">Task One</li>
+                        <li>Task Two</li>
+                        <li>Task Three</li>
+                    -->
+                    </ul>
+                </div>
+                <div class="functions">
+                    <input type="text" placeholder="Type your list here..." id="input-box">
+                    <button class="tooltip" id="button" onclick="addItem()">Add item</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
