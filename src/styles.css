@@ -1,0 +1,543 @@
+/* Original Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  padding: 10px;
+}
+
+.to-do {
+  width: 100%;
+  max-width: 540px;
+  margin: 60px auto 20px;
+  background-color: #ffffff;
+  padding: 30px 30px;
+  box-shadow: 0px 4px 32px 0px #00000014;
+}
+
+.to-do .heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 3px dashed #ccc;
+  height: 25%;
+}
+
+.to-do h2 {
+  font-size: 32px;
+  font-family: "Kalam", cursive;
+  font-weight: 300;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.to-do h2 span {
+  font-size: 10px;
+  background-color: #e9e9e9;
+  border-radius: 32px;
+  padding: 8px;
+}
+
+.to-do i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 12.45px 12.14px 11.55px 11.86px;
+  gap: 8px;
+  opacity: 0px;
+  transition: background-color 0.3s ease,
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.to-do i:hover {
+  background-color: #e9e9e9;
+  cursor: pointer;
+}
+
+.to-do .content {
+  margin-top: 30px;
+  min-height: 350px;
+  border-bottom: 3px dashed #ccc;
+}
+
+.to-do p {
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  line-height: 25.2px;
+  color: #b7bcbf;
+  display: block;
+}
+
+.to-do ul {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.to-do ul li {
+  list-style: none;
+  font-size: 14px;
+  padding: 12px 8px 12px 20px;
+  user-select: none;
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.to-do ul li:hover {
+  background-color: #f7f7f7;
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #dcdcdc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.custom-checkbox.checked {
+  background-color: #ee889a;
+  border-color: #ee889a;
+}
+
+.checkmark {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Task Content Styling */
+.task-content {
+  display: inline;
+  position: relative;
+  padding-right: 0;
+}
+
+.task-text {
+  display: inline;
+}
+
+/* Priority Tag Styling */
+.priority-tag {
+  font-size: 10px;
+  color: #7a8185;
+  margin-left: 8px;
+  text-transform: lowercase;
+}
+
+.priority-tag::before {
+  content: "•";
+  margin-right: 2px;
+}
+
+/* Due Date Tag Styling */
+.due-date-tag {
+  font-size: 10px;
+  color: #7a8185;
+  margin-left: 8px;
+}
+
+/* Action Buttons Container */
+.action-buttons {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+/* Edit Button */
+.edit-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7a8185;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+  background-color: #e9e9e9;
+  color: #1e2122;
+  transform: scale(1.1);
+}
+
+.edit-btn i {
+  font-size: 14px;
+}
+
+/* Remove Button Styling */
+.remove-btn {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  line-height: 32px;
+  color: #ee889a;
+  text-align: center;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+}
+
+.remove-btn:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+/* Edit Container */
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 8px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
+/* Edit Input */
+.edit-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9e9e9;
+  border-radius: 8px;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: #ee889a;
+}
+
+/* Edit Controls */
+.edit-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.edit-priority,
+.edit-date {
+  padding: 8px 12px;
+  border: 2px solid #e9e9e9;
+  border-radius: 16px;
+  font-size: 12px;
+  background-color: white;
+}
+
+.edit-priority {
+  flex: 1;
+  min-width: 120px;
+}
+
+.edit-date {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* Edit Buttons */
+.save-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-btn {
+  background-color: #ee889a;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #de7184;
+  transform: scale(1.05);
+}
+
+.cancel-btn {
+  background-color: #e9e9e9;
+  color: #7a8185;
+}
+
+.cancel-btn:hover {
+  background-color: #dcdcdc;
+  transform: scale(1.05);
+}
+
+/* Functions Section */
+.functions {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.functions input {
+  flex: 1;
+  margin-right: 15px;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  text-align: left;
+}
+
+.functions input::placeholder {
+  font-weight: 500;
+  color: #b7bcbf;
+  font-size: 14px;
+  line-height: 25.2px;
+}
+
+.functions button {
+  border: none;
+  outline: none;
+  padding: 16px 24px;
+  background-color: #ee889a;
+  border-radius: 48px;
+  font-weight: 700;
+  color: #1e2122;
+  transition: background-color 0.2s ease-in-out,
+    transform 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation-duration: 0ms;
+}
+
+.functions button:hover {
+  background-color: #de7184;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.functions button:active {
+  transform: scale(0.92);
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding-bottom: 15px;
+  border-bottom: 3px dashed #ccc;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 16px;
+  background-color: #e9e9e9;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.filter-buttons button.active {
+  background-color: #ee889a;
+  color: white;
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-options label {
+  font-size: 12px;
+  color: #b7bcbf;
+}
+
+.sort-options select {
+  padding: 6px;
+  border-radius: 16px;
+  border: none;
+  background-color: #e9e9e9;
+  font-size: 12px;
+}
+
+.additional-fields {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.additional-fields input[type="date"],
+.additional-fields select {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 16px;
+  background-color: #e9e9e9;
+  font-size: 12px;
+}
+
+/* Dark Mode Styles */
+.dark-mode .container {
+  background-color: #25282a;
+}
+
+.dark-mode .to-do {
+  background-color: #1e2122;
+}
+
+.dark-mode .to-do i {
+  color: white;
+}
+
+.dark-mode .to-do i:hover {
+  background-color: #e9e9e9;
+  color: #25282a;
+}
+
+.dark-mode .heading {
+  border-bottom-color: #4b5255;
+}
+
+.dark-mode .to-do h2 {
+  color: white;
+}
+
+.dark-mode .to-do h2 span {
+  background-color: #7a8185;
+  color: white;
+}
+
+.dark-mode .to-do p {
+  color: #7a8185;
+}
+
+.dark-mode .to-do ul li {
+  color: white;
+}
+
+.dark-mode .to-do ul li:hover {
+  background-color: #444c4e;
+}
+
+.dark-mode .to-do .content {
+  border-bottom-color: #4b5255;
+}
+
+.dark-mode .functions input {
+  background-color: #1e2122;
+  color: white;
+}
+
+.dark-mode .functions input::placeholder {
+  background-color: #1e2122;
+}
+
+.dark-mode .functions button {
+  color: white;
+}
+
+.dark-mode .priority-tag,
+.dark-mode .due-date-tag {
+  color: #b7bcbf;
+}
+
+.dark-mode .filter-buttons button {
+  background-color: #4b5255;
+  color: white;
+}
+
+.dark-mode .filter-buttons button.active {
+  background-color: #ee889a;
+}
+
+.dark-mode .sort-options label {
+  color: #7a8185;
+}
+
+.dark-mode .sort-options select,
+.dark-mode .additional-fields input[type="date"],
+.dark-mode .additional-fields select {
+  background-color: #4b5255;
+  color: white;
+}
+
+/* Dark mode styles for edit functionality */
+.dark-mode .edit-container {
+  background-color: #444c4e;
+}
+
+.dark-mode .edit-input {
+  background-color: #1e2122;
+  color: white;
+  border-color: #4b5255;
+}
+
+.dark-mode .edit-priority,
+.dark-mode .edit-date {
+  background-color: #1e2122;
+  color: white;
+  border-color: #4b5255;
+}
+
+.dark-mode .edit-btn {
+  color: #b7bcbf;
+}
+
+.dark-mode .edit-btn:hover {
+  background-color: #4b5255;
+  color: white;
+}
+
+.dark-mode .cancel-btn {
+  background-color: #4b5255;
+  color: white;
+}
+
+.dark-mode .cancel-btn:hover {
+  background-color: #5a6265;
+}
+
+/* Dark mode checkbox styles */
+.dark-mode .custom-checkbox {
+  border-color: #7a8185;
+}
+
+.dark-mode .custom-checkbox.checked {
+  background-color: #ee889a;
+  border-color: #ee889a;
+}
