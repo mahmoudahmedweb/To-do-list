@@ -10,10 +10,6 @@ This is a simple, interactive To-do List app built with HTML, CSS, and JavaScrip
 - **Task Counter**: Displays the total count of current tasks.
 - **Persistent Data**: All tasks are saved in the browser's local storage, so you won't lose your list when you close or refresh the page.
 
-## Preview
-Live Preview Here: 
-https://codepen.io/Mahmoud-Ahmed-Ramadan/pen/dyxzzVj
-
 ## Planned Improvements
 - Task Filtering: Option to filter tasks by their completion status (e.g., All, Completed, Pending).
 - Sorting Options: Ability to sort tasks by name, date added, or priority.
